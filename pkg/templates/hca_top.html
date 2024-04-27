@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='animate.css/animate.css') }}" rel="stylesheet">
+
+	<title>HCA || homeCraftAssist</title>
+</head>
+<body>
+
+
+<!--			NAVBAR-->
+
+<nav class="navbar navbar-expand-sm fixed-top navbar-shrink py-3 navbar-light" id="mainNav">
+	<div class="container-fluid">
+
+		<a class="navbar-brand d-flex align-items-center" href="index.html">
+			<span id="logoName">HCA|homeCraftAssist</span></a>
+
+		<div class="collapse navbar-collapse nav-underline" id="navcol-1">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item"><a class="nav-link {% if page=='hca' %} active {% endif %}" href="{{ url_for('hca_home') }}">Home</a></li>
+				<li class="nav-item"><a class="nav-link {% if page=='features' %} active {% endif %}" href="{{ url_for('features') }}">Features</a>
+				</li>
+				<li class="nav-item"><a class="nav-link {% if page=='estimator' %} active {% endif %}" href="{{ url_for('estimator') }}">Estimator</a>
+				</li>
+				<li class="nav-item"><a class="nav-link {% if page=='contact' %} active {% endif %}" href="{{ url_for('contact') }}">Contacts</a></li>
+			</ul>
+			<a class="btn shadow" href="{{ url_for('login') }}" id="logIn" role="button">Log in</a>
+			<a class="btn shadow" href="{{ url_for('login') }}" id="signUp" role="button">Sign up</a>
+		</div>
+
+	</div>
+</nav>

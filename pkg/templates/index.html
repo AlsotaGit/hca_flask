@@ -1,0 +1,188 @@
+{% include 'hca_top.html' %}
+
+
+<header class="pt-5">
+	<div class="container pt-4 pt-xl-5">
+		<div class="row pt-5">
+			<div class="col-md-8 text-center text-md-start mx-auto">
+				<div class="text-center">
+					<h1 class="display-4 mb-5 fw-bold">Manage your home Project with Expert Advice.</h1>
+					<form class="d-flex justify-content-center flex-wrap" data-bs-theme="light" method="post">
+						<div class="shadow-lg mb-3">
+							<input class="form-control" name="email" placeholder="Your Email" type="email"/>
+						</div>
+						<div class="shadow-lg mb-3">
+							<button class="btn text-light fw-semibold animate__animated animate__tada" id="subButton"
+							        type="submit">Subscribe
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-12 col-lg-10 mx-auto">
+				<div class="text-center position-relative">
+					<img alt="project" class="img-fluid" src="{{ url_for('static', filename='images/homeproject.svg') }}">
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section>
+	<div class="container py-5 py-xl-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-6 text-center">
+				<h3 class="display-6 pb-md-4 fw-semibold">Our resources are available to help aid that next home
+				                                          project.</h3>
+			</div>
+		</div>
+
+		<div class="row py-3">
+			<!--							RESOURCES-->
+			<div class="col-md-8 d-flex d-sm-flex d-md-flex justify-content-center justify-content-md-start justify-content-xl-center">
+
+				<div>                           <!--TO CARRY ROW-->
+					<div class="row row-cols-1 row-cols-sm-2">
+
+						<div class="col text-center text-md-start">
+							<div class="d-flex justify-content-center align-items-center justify-content-md-start">
+								<h5 class="fw-bold mb-0">Material Estimator</h5>
+							</div>
+							<p class="text-muted my-3">"Elevate your DIY projects and negotiation process with our
+							                           simple Material Estimator. Quickly estimate materials needed for
+							                           your home projects,
+							                           from lumber to paint, empowering you to make informed decisions
+							                           and negotiate
+							                           confidently with contractors. Simplify your planning and ensure
+							                           accurate material
+							                           estimates, every time."</p>
+						</div>
+
+						<div class="col text-center text-md-start">
+							<div class="d-flex justify-content-center align-items-center justify-content-md-start">
+								<h5 class="fw-bold mb-0">Dynamic Pricing Model</h5>
+							</div>
+							<p class="text-muted my-3">Dynamic Pricing Tailored to Your Needs. Users input project
+							                           details; contractors bid accordingly. Our app generates a
+							                           transparent price range,
+							                           blending user specs and contractor bids for informed
+							                           decision-making and fair
+							                           pricing.</p>
+						</div>
+
+						<div class="col text-center text-md-start mt-2">
+							<div class="d-flex justify-content-center align-items-center justify-content-md-start">
+								<h5 class="fw-bold mb-0">Contractor Directory</h5>
+							</div>
+							<p class="text-muted my-3">A directory of licensed and vetted contractors, categorized by
+							                           specialty and location, enabling users to find qualified
+							                           professionals for their
+							                           projects.</p>
+						</div>
+
+						<div class="col text-center text-md-start mt-2">
+							<div class="d-flex justify-content-center align-items-center justify-content-md-start">
+								<h5 class="fw-bold mb-0">Community Forum</h5>
+							</div>
+							<p class="text-muted my-3">A community forum where users and contractors can ask questions,
+							                           share experiences, and exchange tips and advice related to home
+							                           improvement
+							                           projects.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--							BULB LOGO-->
+			<div class="col-md-4 order-first order-md-last d-flex align-items-center justify-content-center">
+				<div>
+					<img alt="idea" class="img-fluid" src="{{ url_for('static', filename='images/idea.svg')}}">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!--								FAQ-->
+<section class="py-4 py-xl-5 mb-5">
+	<div class="container">
+		<div class="row mb-2">
+			<div class="col-md-8 col-xl-6 text-center mx-auto">
+				<h2 class="display-6 fw-bold mb-5"><span class="pb-3 underline">FAQ<br/></span></h2>
+				<p class="text-muted mb-5">Some of the Questions asked by users</p>
+			</div>
+		</div>
+
+		<div class="accordion" id="accordionExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button aria-controls="collapseOne" aria-expanded="true" class="accordion-button fw-bold"
+					        data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
+						Q: How do I get started with the app?
+					</button>
+				</h2>
+				<div class="accordion-collapse collapse show" data-bs-parent="#accordionExample" id="collapseOne">
+					<div class="accordion-body">
+						A: Getting started with the app is easy! Simply sign up for an account to access all the
+						features and tools. From there, you can input project details, browse contractors, estimate
+						material quantities and costs, and engage with the community forum to kickstart your home
+						improvement journey.
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed fw-bold"
+					        data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
+						Q: How does the Dynamic Pricing Model work?
+					</button>
+				</h2>
+				<div class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
+					<div class="accordion-body">
+						A: The Dynamic Pricing Model operates similarly to bidding systems used in platforms like Uber.
+						Users input project details, and experts bid for the job based on those specifications. The app
+						filters bids based on user preferences and returns a price range. Users can then select the bid
+						that best fits their project needs and budget.
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button aria-controls="collapseThree" aria-expanded="false"
+					        class="accordion-button collapsed fw-bold" data-bs-target="#collapseThree"
+					        data-bs-toggle="collapse" type="button">
+						Q: How do I estimate material quantities and costs for my project?
+					</button>
+				</h2>
+				<div class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree">
+					<div class="accordion-body">
+						A: Our Material Estimation tool allows users to input project dimensions, area, volume, or
+						quantity, and select materials from a comprehensive database. The tool then calculates material
+						quantities and costs, taking into account waste factors and other project-specific requirements.
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!--					CONTACT US SECTION-->
+<section class="py-4 py-xl-5">
+	<div class="container" id="contacth2">
+		<div class="text-white d-flex flex-column justify-content-between flex-lg-row p-4 p-md-5">
+			<div class="pb-2 pb-lg-1">
+				<h2 class="fw-semibold text-light mb-2">Would you like more details on how to begin your journey in
+				                                        self-reliance on mini projects??</h2>
+			</div>
+
+			<div class="my-2">
+				<a class="btn py-2 px-4 d-flex mx-md-auto" href="{{ url_for('contact') }}" id="contctUsButton" role="button">Contact
+				                                                                                                  us</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% include 'hca_bottom.html' %}

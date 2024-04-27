@@ -1,0 +1,114 @@
+{% include 'hca_top.html' %}
+
+
+
+<section class="py-5 mt-5">
+	<div class="container py-4 py-xl-5">
+
+		<!--					    	DYNAMIC PRICING MODEL-->
+		<div class="row animate__animated animate__zoomInDown">
+			<div class="col-md-7 d-flex align-items-center">
+				<div class="w-100">
+					<h1 class="display-6 fw-bold mb-4">Dynamic Pricing Model:</h1>
+					<ul>
+						<li class="featuresList">Input project details and receive bids from experts.</li>
+						<li class="featuresList">Experts bid for the job, and the app filters bids based on user
+						                         preferences.
+						</li>
+						<li class="featuresList">Receive a price range based on bids received.</li>
+						<li class="featuresList">Select the bid that best fits your project needs and budget.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-md-5 d-flex d-none d-md-block gy-3">
+				<div>
+					<img alt="bid" class="img-fluid fit-cover" src="{{ url_for('static', filename='images/highest-bidding.svg') }}"
+					     style="max-height: 200px"/>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<!--								MATERIAL ESTIMATION-->
+		<div class="row mt-5 animate__animated animate__zoomInRight">
+			<div class="col-md-5 d-flex d-none d-md-block">
+				<div>
+					<img alt="bid" class="img-fluid fit-cover" src="{{ url_for('static', filename='images/calculator3.svg')}}"
+					     style="max-height: 200px"/>
+				</div>
+
+				<div>
+					<a class="btn shadow d-block w-100" href="{{ url_for('estimator') }}" id="featureEstbtn"
+					   type="submit">Estimator</a>
+				</div>
+			</div>
+
+			<div class="col-md-7 d-flex align-items-center">
+				<div class="w-100">
+					<h1 class="display-6 fw-bold mb-4">:Material Estimation</h1>
+					<ul>
+						<li class="featuresList">Estimate material quantities and costs for construction projects.</li>
+						<li class="featuresList">Input project dimensions, area, volume, or quantity.</li>
+						<li class="featuresList">Select materials from a comprehensive database.</li>
+						<li class="featuresList">Adjust for waste factors and calculate total material costs.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<!--							CONTRACTOR DIRECTORY-->
+		<div class="row mt-5 animate__animated animate__zoomInRight">
+			<div class="col-md-7 d-flex align-items-center">
+				<div class="w-100">
+					<h1 class="display-6 fw-bold mb-4">Contractor Directory:</h1>
+					<ul>
+						<li class="featuresList">Access a directory of licensed and vetted contractors.</li>
+						<li class="featuresList">Search for contractors by specialty, location, and rating.</li>
+						<li class="featuresList">View contractor profiles, portfolios, and customer reviews.</li>
+						<li class="featuresList">Contact contractors directly and request quotes for projects.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-md-5 d-flex d-none d-md-block gy-3">
+				<div>
+					<img alt="folder" class="img-fluid fit-cover" src="{{ url_for('static', filename='images/folder.svg') }}" style="max-height: 200px"/>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<!--								COMMUNITY FORUM-->
+		<div class="row mt-5 animate__animated animate__zoomInUp">
+			<div class="col-md-5 d-flex d-none d-md-block">
+				<div>
+					<img alt="forum" class="img-fluid fit-cover" src="{{ url_for('static', filename='images/forum.svg') }}" style="max-height:
+					200px"/>
+				</div>
+
+				<div>
+					<a class="btn shadow d-block w-100" href="{{ url_for('forum') }}" id="featureForumbtn"
+					   type="submit">Forum</a>
+				</div>
+			</div>
+
+			<div class="col-md-7 d-flex align-items-center">
+				<div class="w-100">
+					<h1 class="display-6 fw-bold mb-4">Community Forum:</h1>
+					<ul>
+						<li class="featuresList">Engage with a community of DIY enthusiasts and professionals.</li>
+						<li class="featuresList">Ask questions, share experiences, and exchange tips.</li>
+						<li class="featuresList">Browse topics related to home improvement, construction, and
+						                         renovation.
+						</li>
+						<li class="featuresList">Connect with like-minded individuals and expand your knowledge.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+
+{% include 'hca_bottom.html' %}
