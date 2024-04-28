@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid;
+    margin: 0;
+    padding: 0;
+}
+
+
+img {
+    width: 100%;
+}
+
+#mainNav {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#logoName {
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid sandybrown;
+}
+
+#logopara {
+    font-size: 2rem;
+    text-align: center;
+    border-top: 2px solid #1D2049;
+}
+
+#logIn {
+    border-radius: 0;
+    margin-left: 2%;
+    color: sandybrown;
+    
+}
+
+#mainLogin {
+    background-color: sandybrown;
+    border-radius: 0;
+    margin-left: 2%;
+    color: white;
+}
+
+#signUp {
+    background-color: sandybrown;
+    border-radius: 0;
+    margin-left: 2%;
+    color: white;
+}
+
+#subButton {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+}
+
+#midContainer {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+.pb-md-4 {
+    padding-bottom: 1.5rem !important;
+}
+
+#contacth2 {
+    background-color: sandybrown;
+}
+
+#contctUsButton {
+    color: sandybrown;
+    background-color: white;
+    border-radius: 0;
+    margin-left: 5%;
+}
+
+.list-inline-item img {
+    max-height: 20px;
+}
+
+#choiceBg {
+    background-color: sandybrown;
+    color: white;
+    min-height: 50px;
+}
+
+.reglog {
+    border-radius: 50%;
+}
+
+#createAccount {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+    font-size: 1.2rem;
+}
+
+#loginId {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+    font-size: 1.2rem !important;
+}
+
+.threekings {
+    display: flex;
+    justify-content: center;
+}
+
+.threekingsBtn {
+    background-color: sandybrown !important;
+    color: white !important;
+    border-radius: 0 !important;
+    font-weight: bold;
+    font-size: 1.2rem !important;
+}
+
+#contactsSendbtn {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+    font-size: 1.5rem;
+}
+
+#resetbtn {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+    font-size: 1.2rem;
+}
+
+#featureEstbtn {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+}
+
+#featureForumbtn {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+}
+
+#requestbtn {
+    background-color: sandybrown;
+    color: white;
+    border-radius: 0;
+}
+
+.estRadioText {
+    font-size: 0.8rem !important;
+}
+
+.estRadioText:hover {
+    background-color: sandybrown;
+    color: white;
+    box-shadow: 2px 2px 8px #00000029;
+}
+
+.mixRatioSpan {
+    font-size: 0.8rem !important;
+}
+
+.ratioDiv:hover {
+    background-color: sandybrown;
+    color: white;
+    box-shadow: 2px 2px 8px #00000029;
+}
+
+.fixed-bottom {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#verifybtn {
+    background-color: sandybrown;
+    color: white;
+    box-shadow: 2px 2px 8px #00000029;
+}
