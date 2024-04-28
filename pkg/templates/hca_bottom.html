@@ -32,17 +32,18 @@
 		<div class="text-muted d-flex justify-content-between align-items-center pt-3 fixed-bottom p-5">
 			<p class="mb-0">Copyright © 2024 Brand</p>
 			<ul class="list-inline mb-0">
-				<li class="list-inline-item"><a href="#"><img alt="mail" src="{{ url_for('static', filename='images/mail.svg')}}"></a></li>
-				<li class="list-inline-item"><a href="#"><img alt="instagram" src="{{ url_for('static', filename='images/instagram.svg')}}"></a></li>
-				<li class="list-inline-item"><a href="#"><img alt="twitter" src="{{ url_for('static', filename='images/twitter.svg')}}"></a></li>
+				<li class="list-inline-item shadow"><a href="#"><img alt="mail" src="{{ url_for('static', filename='images/mail.svg')}}"></a></li>
+				<li class="list-inline-item shadow"><a href="#"><img alt="instagram" src="{{ url_for('static', filename='images/instagram.svg')
+						}}"></a></li>
+				<li class="list-inline-item shadow"><a href="#"><img alt="twitter" src="{{ url_for('static', filename='images/twitter.svg')}}"></a></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 
 
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="jquery-3.7.1.min.js"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='jquery-3.7.1.min.js') }}"></script>
 <script>
 
 </script>

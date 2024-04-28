@@ -10,11 +10,11 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div>
                     <form class="p-3 p-xl-4" data-bs-theme="light" method="post" novalidate>
 						<div class="mb-3">
-							{{ form.email(class='form-control', placeholder='Enter your Email') }}
+							{{ form.email(class='form-control shadow', placeholder='Enter your Email') }}
 							{% if form.email.errors %}
 							{% for error in form.email.errors %}
 							<span style="color: #9C1A1C">{{ error }}</span>
@@ -41,7 +41,7 @@
 						</div>
 
 						<div id="contactsSendbtn">
-							{{ form.submit(class='btn d-block shadow w-100') }}
+							{{ form.submit(class='btn d-block shadow w-100 fw-bold text-light') }}
 						</div>
                     </form>
                 </div>

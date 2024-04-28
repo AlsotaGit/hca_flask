@@ -1,0 +1,43 @@
+{% extends 'hca_layout.html' %}
+
+
+{% block content %}
+
+	<section class="py-4 py-md-5 mt-5 animate__animated animate__fadeIn">
+		<div class="container py-md-5">
+			<div class="row d-flex align-items-center">
+
+				<div class="col-md-6 text-center">
+					<img alt="forgotten Password" class="img-fluid w-100" src="{{ url_for('static', filename='images/cyber.svg') }}"/>
+				</div>
+
+				<div class="col-md-6 col-xl-4 text-center text-md-start">
+					<h2 class="display-6 fw-bold mb-4">Verification</h2>
+					<p class="text-muted">Enter the verification code sent to your registered Email</p>
+
+					{% with messages = get_flashed_messages() %}
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-danger">
+									{{message}}
+								</div>
+							{% endfor %}
+						{% endif %}
+					{% endwith %}
+
+					<form class="p-3 p-xl-4" data-bs-theme="light" method="post" novalidate>
+						<div class="mb-3">
+							{{ form.pin(class='form-control shadow', placeholder='Enter code') }}
+						</div>
+						<div id="verifybtn">
+							{{ form.submit(class='btn d-block shadow w-100 fw-bold text-light') }}
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock content %}

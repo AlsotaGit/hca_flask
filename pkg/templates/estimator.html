@@ -1,5 +1,88 @@
 {% include 'hca_top.html' %}
 
 
+<section class="py-5 mt-5">
+	<div class="container py-5 animate__animated animate__zoomInDown">
+		<h2 class="display-6 fw-bold mb-4 text-center">Estimator</h2>
+		<div class="row d-flex justify-content-center text-center">
+			<form method="post" action="" novalidate>
+				{% for unit in form.units %}
+				<div class="col-md-5 form-check form-check-inline mx-auto text-center">
+					{{ unit(class='form-check-control') }}
+					{{ unit.label(class='form-check-label') }}
+				</div>
+				{% endfor %}
+			</form>
+
+		</div>
+
+		<div class="row d-flex">
+			<h5 class="fw-bold mb-2 mt-3 text-center">Choose an Area</h5>
+				<form method="post" novalidate>
+					{% for area in form.areas %}
+					<div class=" col-md-2 mb-2 form-check-inline text-center" id="masonryId">
+						{{ area(class='form-check-control') }}
+						{{ area.label(class='form-check-label') }}
+					</div>
+					{% endfor %}
+				</form>
+		</div>
+
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-6 w-100">
+					<form class="p-3 p-xl-4" data-bs-theme="light" method="post" novalidate>
+						<div class="mt-3 hide" id="concreteCalc">
+							<div class="mb-2">
+								<input class="shadow form-control" name="measurement" placeholder="Length" required type="text"/>
+							</div>
+
+							<div class="mb-2">
+								<input class="shadow form-control" name="measurement" placeholder="Width" required type="text"/>
+							</div>
+
+							<div class="mb-2">
+								<input class="shadow form-control" name="measurement" placeholder="Height" required type="text"/>
+							</div>
+
+							<div class="mb-2">
+								<input class="shadow form-control" name="measurement" placeholder="Cubic" required type="text"/>
+							</div>
+
+							<div class="mb-2">
+								<div class="ratioDiv d-flex">
+									<div class="col-md-3">
+										<label class="form-check-label d-flex d-inline-block" for="masonryId">Standard Mix:</label>
+									</div>
+									<div class="col-md-9">
+										<input class="form-check-input" id="standardMix" name="unit" type="radio">
+										<span class="mixRatioSpan">1:2:4 (Cement : Sand : Aggregate)—used for general construction where higher strength concrete is required.</span>
+									</div>
+
+								</div>
+
+								<div class="ratioDiv d-flex">
+									<div class="col-md-3">
+										<label class="form-check-label" for="masonryId">Low-Strength Mix:</label>
+									</div>
+									<div class="col-md-9">
+										<input class="form-check-input" id="loeStrengthMix" name="unit" type="radio">
+										<span class="mixRatioSpan">1:2.5:5 (Cement : Sand : Aggregate) - used for non-structural applications where strength is not a primary concern, like sidewalks, patios, and driveways.</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div>
+							<button class="btn shadow d-block w-100" id="contactsSendbtn" type="submit">Calculate
+							</button>
+						</div>
+
+					</form>
+				</div>
+		</div>
+	</div>
+</section>
+
 
 {% include 'hca_bottom.html' %}
