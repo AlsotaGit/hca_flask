@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, abort
+from flask import Flask, render_template, request, redirect, url_for, session, flash, abort, make_response
 from flask_wtf.csrf import CSRFError
+from sqlalchemy.sql import text
 from markupsafe import escape
 from pkg import app, csrf
 from pkg.hca_forms import ContactForm, LoginForm, RegisterForm, PasswordResetForm, PasswordResetConfirmForm, VerifyPinForm, EstimatorForm
+from pkg.models import User
 
 
 @app.errorhandler(CSRFError)
@@ -40,7 +42,7 @@ def login():
 			if email == email and password == password:
 				session['email'] = email
 				flash('You are now logged in!', 'success')
-				return redirect(url_for('profile'))
+				return render_template('profile.html')
 			else:
 				flash('Please enter your email and password.')
 	return render_template('login.html', form=form, title='HCA|Login', page='login')
@@ -49,8 +51,35 @@ def login():
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
 	form = RegisterForm()
-	if form.validate_on_submit():
-		return redirect(url_for('login'))
+	if request.method == 'POST':
+		if form.validate_on_submit():
+			# username = form.username.data
+			# email = form.email.data
+			# password = form.password.data
+			# confirm_password = form.confirm_password.data
+			# first_name = form.first_name.data
+			# last_name = form.last_name.data
+			# pin = form.pin.data
+			# confirm_pin = form.confirm_pin.data
+			# mobile = form.mobile.data
+			# mobile2 = form.mobile2.data
+			# genders = form.genders.data
+			# mean_of_identification = form.mean_of_identification.data
+			# company_name = form.company_name.data
+			# address = form.address.data
+			# cic = form.cic.data
+			# state = form.state.data
+			# industry = form.industry.data
+			# specialization = form.specialization.data
+			# reasons = form.reasons.data
+			# terms = form.terms.data
+			# file = form.upload_file.data
+			flash('Welcome to HCA!', 'success')
+			return render_template('login.html')
+		else:
+			flash('Please enter your email and password.')
+			return render_template('register.html', form=form, title='HCA|Register', page='register')
+	return render_template('register.html', form=form, title='HCA|Register', page='register')
 
 
 @app.route('/logout/')

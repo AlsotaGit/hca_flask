@@ -35,9 +35,9 @@
 					</div>
 
 					<div class="mb-3">
-						{{ form.password(class='form-control shadow', placeholder='Enter password') }}
-						{% if form.password.errors %}
-							{% for error in form.password.errors %}
+						{{ form.pin(class='form-control shadow', placeholder='Enter Pin') }}
+						{% if form.pin.errors %}
+							{% for error in form.pin.errors %}
 								<span style="color: #9C1A1C">{{ error }}</span>
 							{% endfor %}
 						{% endif %}
