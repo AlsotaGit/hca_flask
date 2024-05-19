@@ -3,6 +3,51 @@ from wtforms import (StringField, PasswordField, EmailField, RadioField, SelectF
                      TextAreaField, HiddenField, FileField, DateField)
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 
+nigerian_states = [
+	("Abia", "Abia"), ("Adamawa", "Adamawa"), ("Akwa Ibom", "Akwa Ibom"), ("Anambra", "Anambra"), ("Bauchi", "Bauchi"),
+	("Bayelsa", "Bayelsa"), ("Benue", "Benue"), ("Borno", "Borno"), ("Cross River", "Cross River"), ("Delta", "Delta"),
+	("Ebonyi", "Ebonyi"), ("Edo", "Edo"), ("Ekiti", "Ekiti"), ("Enugu", "Enugu"), ("Gombe", "Gombe"), ("Imo", "Imo"),
+	("Jigawa", "Jigawa"), ("Kaduna", "Kaduna"), ("Kano", "Kano"), ("Katsina", "Katsina"), ("Kebbi", "Kebbi"), ("Kogi", "Kogi"),
+	("Kwara", "Kwara"), ("Lagos", "Lagos"), ("Nasarawa", "Nasarawa"), ("Niger", "Niger"), ("Ogun", "Ogun"), ("Ondo", "Ondo"),
+	("Osun", "Osun"), ("Oyo", "Oyo"), ("Plateau", "Plateau"), ("Rivers", "Rivers"), ("Sokoto", "Sokoto"), ("Taraba", "Taraba"),
+	("Yobe", "Yobe"), ("Zamfara", "Zamfara"), ("Federal Capital Territory", "Federal Capital Territory")
+]
+
+identification_means = [
+	("National ID Card", "National ID Card"),
+	("International Passport", "International Passport"),
+	("Driver's License", "Driver's License"),
+	("Permanent Voter's Card", "Permanent Voter's Card"),
+]
+
+construction_sections = [
+	("Industry", "Industry"),
+	("Mechanical", "Mechanical"),
+	("Electrical", "Electrical"),
+	("Construction", "Construction"),
+	("General labor", "General labor")
+]
+
+user_types = [
+	("diy", "DIY Enthusiast|ou like to tinker!!"),
+	("expert", "Expert/Contractor|Improve clientele"),
+	("both", "Both|We've got you covered")
+]
+
+construction_activities = [
+	("concrete", "Concrete"),
+	("block_work", "Block Work"),
+	("painting", "Painting"),
+	("tiling", "Tiling"),
+	("roofing", "Roofing"),
+	("plastering", "Plastering")
+]
+
+block_sizes = [
+	(9, '9 inch'),
+	(6, '6 inch')
+]
+
 
 class LoginForm(FlaskForm):
 	email = EmailField('Email', validators=[DataRequired(), Email()])
@@ -20,17 +65,16 @@ class RegisterForm(FlaskForm):
 	mobile = TelField('Mobile Number', validators=[DataRequired(), Length(11)])
 	mobile2 = TelField('Mobile Number', validators=[Length(11)])
 	genders = RadioField('Gender', choices=[('male', 'Male'), ('female', 'Female')])
-	mean_of_identification = SelectField('Means of Identification', choices=tuple['International Passport', "Driver's licence", 'NIN'], coerce=int, validators=[DataRequired()])
+	mean_of_identification = SelectField('Means of Identification', choices=identification_means, validators=[DataRequired()])
 	identification_number = StringField('Identification Number', validators=[DataRequired()])
 	dob = DateField('Date of Birth', validators=[DataRequired()])
 	upload_file = FileField('Upload File', validators=[DataRequired()])
 	company_name = StringField('Company Name', validators=[DataRequired()])
 	cic = StringField('CIC No', validators=[DataRequired()])
 	address = StringField('Address', validators=[DataRequired()])
-	state = StringField('State', validators=[DataRequired()])
-	industry = SelectField('Industry', choices=tuple['Industry', 'Mechanical', 'Electrical', 'Construction', 'General labor'], coerce=int)
-	specialization = StringField('Specialization/Area of Expertise', validators=[DataRequired()])
-	reasons = RadioField('Reason', choices=[('diy', 'DIY Enthusiast|you like to tinker!!'), ('expert', 'Expert/Contractor|improve clientel'), ('both', 'Both|we have got you covered')])
+	state = SelectField('State', choices=nigerian_states, validators=[DataRequired()])
+	industry = SelectField('Industry', choices=construction_sections, validators=[DataRequired()])
+	reasons = RadioField('Reason', choices=user_types, validators=[DataRequired()])
 	terms = BooleanField('Agree to terms and conditions', validators=[DataRequired()])
 	submit = SubmitField('Register')
 
@@ -60,13 +104,13 @@ class ContactForm(FlaskForm):
 
 
 class EstimatorForm(FlaskForm):
-	units = RadioField(label='Choose Unit', choices=[('metric', 'Metric '), ('imperial', 'Imperial ')], validators=[DataRequired()])
-	areas = RadioField('Choose Area', choices=[('concrete', 'Concrete'), ('block_work', 'Block Work'), ('painting', 'Painting'), ('tiling', 'Tiling'),
-	('roofing', 'Roofing'), ('plastering', 'Plastering')], validators=[DataRequired()])
+	units = RadioField('Choose Unit', choices=[('metric', 'Metric '), ('imperial', 'Imperial ')], validators=[DataRequired()])
+	areas = RadioField('Choose Area', choices=construction_activities, validators=[DataRequired()])
 	width = IntegerField('Width', validators=[DataRequired()])
 	length = IntegerField('Length', validators=[DataRequired()])
 	height = IntegerField('Height', validators=[DataRequired()])
 	area = IntegerField('Area', validators=[DataRequired()])
-	cubic = IntegerField(label='Cubic')
-	mix1 = RadioField(label='Standard Mix Ratio:', validators=[DataRequired()])
-	mix2 = RadioField(label='Low-Strength Mix:', validators=[DataRequired()])
+	block = RadioField('Size of Block', choices=block_sizes, validators=[DataRequired()])
+	cubic = IntegerField('Cubic')
+	mix1 = RadioField('Standard Mix Ratio:', validators=[DataRequired()])
+	mix2 = RadioField('Low-Strength Mix:', validators=[DataRequired()])
